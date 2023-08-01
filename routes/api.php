@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DepartmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/login', AuthController::class)->name('login');
 
-Route::middleware('api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('apiJwt')->group(function() {
+    Route::resource('/departments', DepartmentController::class);
 });
 
-Route::post('/login', AuthController::class)->name('login');
+
