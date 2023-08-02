@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', AuthController::class)->name('login');
 
 Route::middleware('apiJwt')->group(function() {
-    Route::resource('/departments', DepartmentController::class);
+    Route::apiResource('/departments', DepartmentController::class)->except('create');
 });
 
 
