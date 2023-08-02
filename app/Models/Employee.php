@@ -13,7 +13,7 @@ class Employee extends Model
 
     protected $guarded = [];
 
-    public function departament(): BelongsTo
+    public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
