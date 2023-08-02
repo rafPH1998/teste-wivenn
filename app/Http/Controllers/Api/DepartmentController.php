@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentRequest;
+use App\Http\Resources\DepartmentResource;
 use App\Models\Department;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,11 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $data = Department::orderBy('id', 'DESC')->get();
-        return response()->json(['data' => $data]);
+        $departments = Department::with('employees')
+                            ->orderBy('id', 'DESC')
+                            ->get();
+                            
+        return DepartmentResource::collection($departments);
     }
 
     /**
@@ -33,12 +37,15 @@ class DepartmentController extends Controller
      */
     public function show(string $id)
     {
-        $response = Department::query()->find($id);
+        $response = Department::query()
+                    ->with('employees')
+                    ->find($id);
 
         if (!$response) {
             return response()->json(['error' => 'Departamento não encontrado!'], 404);
         }
-        return response()->json(['data' => $response]);
+
+        return new DepartmentResource($response);
     }
 
     /**
