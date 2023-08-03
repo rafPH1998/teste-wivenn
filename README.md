@@ -60,8 +60,7 @@ Esta API foi desenvolvida para gerenciar departamentos, funcionários e tarefas 
 
 # Autenticação e Token JWT
 
-- **POST /api/login**
-**POST /api/login** - Endpoint para autenticação de usuários e geração de token JWT.
+- **POST /api/login** - Endpoint para autenticação de usuários e geração de token JWT.
 
 # Endpoints para Departamentos
 
