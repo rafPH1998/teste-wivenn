@@ -22,6 +22,7 @@ DB_PORT=3306
 DB_DATABASE=nome_que_desejar_db
 DB_USERNAME=nome_usuario
 DB_PASSWORD=senha_aqui
+```
 
 
 Suba os containers do projeto
