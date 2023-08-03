@@ -13,6 +13,6 @@ class EmployeesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Employee::factory(50)->create();
+        Employee::factory(10)->create();
     }
 }

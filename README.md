@@ -23,6 +23,7 @@ DB_DATABASE=nome_que_desejar_db
 DB_USERNAME=nome_usuario
 DB_PASSWORD=senha_aqui
 
+
 Suba os containers do projeto
 ```sh
 docker-compose up -d
@@ -54,7 +55,7 @@ em seguida: php artisan db:seed
 
 
 # Projeto: Estruturando uma API Restful utilizando Laravel
-Esta API foi desenvolvida para gerenciar departamentos e funcionários de uma empresa. Abaixo estão listados os endpoints disponíveis para a autenticação e as operações relacionadas aos departamentos e funcionários.
+Esta API foi desenvolvida para gerenciar departamentos, funcionários e tarefas de uma empresa. Abaixo estão listados os endpoints disponíveis para a autenticação e as operações relacionadas aos departamentos, funcionários e tarefas de cada funcionário.
 
 # Autenticação e Token JWT
 
@@ -72,8 +73,9 @@ Esta API foi desenvolvida para gerenciar departamentos e funcionários de uma em
 
 # Endpoints para Funcionários
 
-- **GET /api/employees** - Lista todos os funcionários com informações sobre seus respectivos departamentos.
+- **GET /api/employees** - Lista todos os funcionários com informações sobre seus respectivos departamentos e tarefas.
 - **GET /api/employees/{id}** - Obtém informações sobre um funcionário específico pelo seu ID.
-- **POST /api/employees** - Cadastra um novo funcionário.
+- **POST /api/employees** - Cadastra um novo funcionário para um departamento especifico.
 - **PUT /api/employees/{id}** - Atualiza as informações de um funcionário específico pelo seu ID
 - **DELETE /api/employees/{id}** - Deleta um funcionário existente pelo seu ID
+

@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::with('department')->orderBy('id', 'DESC')->get();
+        $employees = Employee::with(['department', 'tasks'])->orderBy('id', 'DESC')->get();
         return EmployeeResource::collection($employees);
     }
 
@@ -31,7 +31,7 @@ class EmployeeController extends Controller
     public function show(string $id)
     {
         $showEmployee = Employee::query()
-                ->with('department')
+                ->with(['department', 'tasks'])
                 ->find($id);
 
         if (!$showEmployee) {

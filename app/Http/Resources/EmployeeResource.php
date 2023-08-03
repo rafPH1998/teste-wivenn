@@ -22,8 +22,9 @@ class EmployeeResource extends JsonResource
             'lastName' => $this->lastName,
             'email' => $this->email,
             'phone' => $this->phone,
-            'department' => new DepartmentResource($this->whenLoaded('department')),
             'created_at' => $this->created_at->format('d/m/Y'), 
+            'department' => new DepartmentResource($this->whenLoaded('department')),
+            'tasks' =>  TaskResource::collection($this->tasks)
         ];
     }
 }
