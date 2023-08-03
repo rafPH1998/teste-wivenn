@@ -79,3 +79,11 @@ Esta API foi desenvolvida para gerenciar departamentos, funcionários e tarefas 
 - **PUT /api/employees/{id}** - Atualiza as informações de um funcionário específico pelo seu ID
 - **DELETE /api/employees/{id}** - Deleta um funcionário existente pelo seu ID
 
+
+# Endpoints para Tarefas
+
+- **GET /api/tasks** - Lista todas as tarefas que trará informação sobre seu respectivo funcionário.
+- **GET /api/tasks/{taskId}** - Obtém informações sobre uma tarefa específica pelo seu ID trazendo o responsavél por aquela tarefa.
+- **POST /api/tasks** - Cadastra uma nova tarefa para um funcionário especifico.
+- **PUT /api/tasks/{taskId}** - Atualiza as informações de uma tarefa específica pelo seu ID
+- **DELETE /api/tasks/{taskId}** - Deleta uma tarefa existente pelo seu ID

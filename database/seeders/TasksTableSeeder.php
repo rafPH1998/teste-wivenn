@@ -13,6 +13,6 @@ class TasksTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Task::factory(100)->create();
+        Task::factory(20)->create();
     }
 }
