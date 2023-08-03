@@ -27,9 +27,14 @@ class DepartmentController extends Controller
      */
     public function store(DepartmentRequest $request)
     {
-        $data = $request->validated();
-        $response = Department::query()->create($data);
-        return response()->json(['data' => $response]); 
+       try {
+            $data = $request->validated();
+            $response = Department::query()->create($data);
+            return response()->json(['data' => $response]); 
+        
+       } catch (\Throwable $exception) {
+            return response()->json(['error' => $exception->getMessage()]); 
+       }
     }
 
     /**

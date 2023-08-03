@@ -21,8 +21,12 @@ class EmployeeController extends Controller
 
     public function store(EmployeeRequest $request)
     {
-        $employee = Employee::query()->create($request->validated());
-        return response()->json(['data' => $employee]); 
+        try {
+            $employee = Employee::query()->create($request->validated());
+            return response()->json(['data' => $employee]); 
+       } catch (\Throwable $exception) {
+            return response()->json(['error' => $exception->getMessage()]); 
+       }
     }
 
     /**
